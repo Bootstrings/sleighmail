@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sleighmail — Holiday email campaigns for small shops, written in 48 hours</title>
+<link rel="canonical" href="https://sleighmail.us/">
+<meta property="og:title" content="Sleighmail — Holiday email campaigns for small shops, written in 48 hours">
+<meta property="og:description" content="Black Friday, Cyber Monday and December email campaigns for small online shops. Delivered in 48 hours. Approve before you pay.">
+<meta property="og:url" content="https://sleighmail.us/">
+<meta name="description" content="Black Friday, Cyber Monday and December email campaigns for small online shops. Subject lines, preview text, body copy and send dates, delivered in 48 hours. Approve before you pay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --cream:#f6efe2; --paper:#fffaf1; --ink:#1c2a23; --pine:#173f2c; --pine-2:#22553b;
+  --berry:#c23d2c; --berry-2:#a0301f; --gold:#c0943a; --muted:#5d6a62; --line:#e3d9c4; --soft:#efe5d1;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--cream);color:var(--ink);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.6;font-size:17px}
+h1,h2,h3{font-family:Fraunces,Georgia,serif;color:var(--pine);margin:0 0 .45em;line-height:1.08;letter-spacing:-.012em;font-weight:600}
+h1{font-size:clamp(2.4rem,6vw,4.2rem)}
+h2{font-size:clamp(1.7rem,3.6vw,2.5rem)}
+h3{font-size:1.25rem}
+p{margin:0 0 1em}
+a{color:var(--pine-2)}
+.wrap{max-width:1040px;margin:0 auto;padding:0 22px}
+header.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.brand{font-family:Fraunces,Georgia,serif;font-weight:700;font-size:1.45rem;color:var(--pine);text-decoration:none;display:flex;align-items:center;gap:10px}
+.brand svg{width:30px;height:30px}
+nav a{margin-left:22px;text-decoration:none;color:var(--muted);font-weight:500;font-size:.95rem}
+nav a:hover{color:var(--pine)}
+.btn{display:inline-block;padding:14px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid transparent;transition:transform .08s ease,background .15s ease}
+.btn:active{transform:translateY(1px)}
+.btn-primary{background:var(--berry);color:#fff}
+.btn-primary:hover{background:var(--berry-2)}
+.btn-ghost{border-color:var(--pine);color:var(--pine);background:transparent}
+.btn-ghost:hover{background:var(--pine);color:#fff}
+.eyebrow{display:inline-block;background:var(--pine);color:#f6efe2;font-size:.8rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;padding:7px 12px;border-radius:6px;margin-bottom:22px}
+.hero{padding:56px 0 64px;border-bottom:1px solid var(--line)}
+.hero .lede{font-size:1.2rem;color:#33423a;max-width:640px}
+.hero .actions{display:flex;gap:14px;flex-wrap:wrap;margin:30px 0 18px}
+.hero .fine{color:var(--muted);font-size:.95rem}
+.dates{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:12px;margin-top:40px}
+.date{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.date b{display:block;font-family:Fraunces,Georgia,serif;font-size:1.3rem;color:var(--pine)}
+.date span{color:var(--muted);font-size:.9rem}
+section{padding:64px 0;border-bottom:1px solid var(--line)}
+.kicker{color:var(--berry);font-weight:600;letter-spacing:.06em;text-transform:uppercase;font-size:.8rem;margin-bottom:10px}
+.grid3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:28px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:26px}
+.card h3{margin-bottom:.3em}
+.tier{position:relative;display:flex;flex-direction:column}
+.tier .price{font-family:Fraunces,Georgia,serif;font-size:2.4rem;color:var(--ink);margin:6px 0 2px}
+.tier .price small{font-size:1rem;color:var(--muted);font-family:Inter,sans-serif}
+.tier ul{padding-left:18px;margin:14px 0 20px;color:#33423a}
+.tier li{margin-bottom:6px}
+.tier .btn{margin-top:auto;text-align:center}
+.tier.pop{border-color:var(--pine);box-shadow:0 10px 30px rgba(23,63,44,.10)}
+.tag{position:absolute;top:-13px;left:22px;background:var(--gold);color:#1c2a23;font-size:.75rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:6px}
+.includes{margin-top:22px;background:var(--soft);border-radius:14px;padding:20px 24px;color:#33423a}
+.includes b{color:var(--pine)}
+.emails{display:grid;gap:16px;margin-top:30px}
+.email{background:var(--paper);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.email .meta{display:flex;flex-wrap:wrap;gap:8px 18px;align-items:baseline;background:var(--soft);padding:12px 22px;font-size:.88rem;color:var(--muted)}
+.email .meta b{color:var(--pine);font-weight:600}
+.email .body{padding:20px 22px 8px}
+.email .subj{font-weight:600;color:var(--ink);margin:0 0 2px;font-size:1.05rem}
+.email .alt{color:var(--muted);font-size:.92rem;margin:0 0 4px}
+.email .prev{color:var(--muted);font-size:.92rem;font-style:italic;margin:0 0 16px;padding-bottom:14px;border-bottom:1px dashed var(--line)}
+.email .copy p{margin:0 0 .9em;color:#2a3730}
+.email .copy ul{margin:0 0 .9em;padding-left:20px;color:#2a3730}
+.email .cta{display:inline-block;background:var(--pine);color:#fff;padding:9px 16px;border-radius:8px;font-weight:600;font-size:.95rem;margin:2px 0 14px}
+.steps{counter-reset:s;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px;margin-top:28px}
+.step{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:24px}
+.step::before{counter-increment:s;content:counter(s);display:inline-flex;width:34px;height:34px;align-items:center;justify-content:center;border-radius:50%;background:var(--pine);color:#fff;font-weight:700;font-family:Fraunces,Georgia,serif;margin-bottom:12px}
+.step h3{font-size:1.1rem}
+.step p{color:#33423a;margin:0}
+details{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:0 20px;margin-top:10px}
+summary{cursor:pointer;padding:16px 0;font-weight:600;color:var(--pine);list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:1.4rem;color:var(--muted);font-weight:400}
+details[open] summary::after{content:"–"}
+details p{color:#33423a;padding-bottom:16px;margin:0}
+.start{background:var(--pine);color:#f6efe2;border-radius:22px;padding:48px 36px;text-align:center}
+.start h2{color:#fff}
+.start p{color:#dfe7e1;max-width:620px;margin:0 auto 1em}
+.start .how{display:inline-block;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:12px;padding:16px 22px;margin-top:10px;text-align:left}
+.start .how b{color:#fff}
+footer{padding:40px 0 60px;color:var(--muted);font-size:.92rem}
+footer p{max-width:720px}
+.honest{background:var(--soft);border-left:4px solid var(--gold);padding:14px 18px;border-radius:0 10px 10px 0;color:#33423a;margin-top:20px}
+@media (max-width:640px){
+  nav{display:none}
+  section{padding:48px 0}
+  .start{padding:36px 22px}
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#top" aria-label="Sleighmail">
+      <svg viewBox="0 0 32 32" fill="none" aria-hidden="true">
+        <rect x="3" y="8" width="26" height="18" rx="3" fill="#173f2c"/>
+        <path d="M3 11l13 9 13-9" stroke="#f6efe2" stroke-width="2" stroke-linejoin="round"/>
+        <circle cx="25" cy="7" r="4" fill="#c23d2c"/>
+      </svg>
+      Sleighmail
+    </a>
+    <nav>
+      <a href="#pricing">Pricing</a>
+      <a href="#sample">Sample</a>
+      <a href="#how">How it works</a>
+      <a href="#faq">FAQ</a>
+      <a href="#start">Get started</a>
+    </nav>
+  </header>
+</div>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <span class="eyebrow">Black Friday is Nov 27 · Cyber Monday is Nov 30</span>
+      <h1>Your holiday emails,<br>written in 48 hours.</h1>
+      <p class="lede">Sleighmail writes Black Friday, Cyber Monday and December email campaigns for small online shops. Subject lines, preview text, body copy, send dates — ready to paste into Klaviyo, Mailchimp or Shopify Email. You approve every word before you pay.</p>
+      <div class="actions">
+        <a class="btn btn-primary" href="#start">Get started</a>
+        <a class="btn btn-ghost" href="#sample">Read a sample sequence</a>
+      </div>
+      <p class="fine">Written by an AI (Claude). Run by a human. From $149. No subscription, no retainer, no agency.</p>
+      <div class="dates">
+        <div class="date"><b>Mon Nov 23</b><span>Teaser emails should be out</span></div>
+        <div class="date"><b>Fri Nov 27</b><span>Black Friday</span></div>
+        <div class="date"><b>Mon Nov 30</b><span>Cyber Monday</span></div>
+        <div class="date"><b>Dec 15–18</b><span>Typical shipping cutoffs</span></div>
+      </div>
+    </div>
+  </div>
+
+  <section id="who">
+    <div class="wrap">
+      <p class="kicker">Who it's for</p>
+      <h2>Small shops with a list and no copywriter.</h2>
+      <div class="grid3">
+        <div class="card"><h3>You sell online</h3><p>Shopify, Etsy, Squarespace, WooCommerce, Big Cartel — it doesn't matter. If you have products and a checkout, this works.</p></div>
+        <div class="card"><h3>You have an email list</h3><p>Even a small one. Email is the highest-margin channel you own, and the holidays are when it pays. 500 engaged subscribers is plenty.</p></div>
+        <div class="card"><h3>You haven't written the emails yet</h3><p>Or you have, and they're fine. Fine is what every other shop sends on Black Friday. You need the ones that get opened.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="pricing">
+    <div class="wrap">
+      <p class="kicker">Pricing</p>
+      <h2>Three packages. One flat price each.</h2>
+      <div class="grid3">
+        <div class="card tier">
+          <h3>Black Friday Burst</h3>
+          <div class="price">$149</div>
+          <p style="color:var(--muted);margin:0">3 emails · Nov 27–30</p>
+          <ul>
+            <li>Black Friday announcement</li>
+            <li>Weekend "last chance"</li>
+            <li>Cyber Monday extension / final hours</li>
+          </ul>
+          <a class="btn btn-ghost" href="#start">Start with the Burst</a>
+        </div>
+        <div class="card tier pop">
+          <span class="tag">Most popular</span>
+          <h3>BFCM Sequence</h3>
+          <div class="price">$249</div>
+          <p style="color:var(--muted);margin:0">5 emails · Nov 23–30</p>
+          <ul>
+            <li>Teaser</li>
+            <li>Subscriber early access</li>
+            <li>Black Friday launch</li>
+            <li>Small Business Saturday / weekend reminder</li>
+            <li>Cyber Monday last call</li>
+          </ul>
+          <a class="btn btn-primary" href="#start">Start with the Sequence</a>
+        </div>
+        <div class="card tier">
+          <h3>Full Holiday Calendar</h3>
+          <div class="price">$399</div>
+          <p style="color:var(--muted);margin:0">8 emails · Nov 23 – Dec 22</p>
+          <ul>
+            <li>Everything in the BFCM Sequence</li>
+            <li>Gift guide</li>
+            <li>Shipping-deadline alert</li>
+            <li>Last-minute gift cards</li>
+          </ul>
+          <a class="btn btn-ghost" href="#start">Start with the Calendar</a>
+        </div>
+      </div>
+      <div class="includes">
+        <b>Every email includes:</b> three subject-line options · preview text · body copy and call to action · a recommended send date and time · a plain-text version · one round of revisions. <b>Delivery:</b> 48 hours from intake. Need it in 24? Add $50.
+      </div>
+    </div>
+  </section>
+
+  <section id="sample">
+    <div class="wrap">
+      <p class="kicker">Sample</p>
+      <h2>A 5-email BFCM Sequence for a (fictional) candle shop.</h2>
+      <p style="max-width:680px;color:#33423a">Harbor &amp; Pine is a two-person soy-candle studio we made up to show you the work. The offer: 25% off sitewide, free shipping over $60, subscriber early access two days before the public. Your sequence is written from scratch around your products, your voice and your offer.</p>
+
+      <div class="emails">
+        <article class="email">
+          <div class="meta"><b>Email 1 · Teaser</b><span>Send: Mon Nov 23, 9:00 AM</span></div>
+          <div class="body">
+            <p class="subj">Subject: Something's warming up for Friday</p>
+            <p class="alt">Alt: A small heads-up before the big weekend · Alt: You hear about this first</p>
+            <p class="prev">Preview: Our biggest sale of the year — and you hear it first.</p>
+            <div class="copy">
+              <p>Hi {first name},</p>
+              <p>Quick one. This Friday we're running our biggest sale of the year: 25% off everything we pour, plus free shipping over $60.</p>
+              <p>But you're on this list, so you don't have to wait for Friday. Early access opens Wednesday morning — and the two scents that sold out last December (Cedar Harbor, Winter Pine) are in short supply again.</p>
+              <p>Keep an eye on your inbox Wednesday.</p>
+              <p>— Maya, Harbor &amp; Pine</p>
+              <p>P.S. Candles ship from the studio within two days, so they'll be on the shelf long before anyone's holiday table.</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="email">
+          <div class="meta"><b>Email 2 · Early access</b><span>Send: Wed Nov 25, 8:00 AM</span></div>
+          <div class="body">
+            <p class="subj">Subject: You're in early: 25% off starts now</p>
+            <p class="alt">Alt: Two days before everyone else · Alt: Early access is open (quietly)</p>
+            <p class="prev">Preview: Early access is open. Cedar Harbor won't last the week.</p>
+            <div class="copy">
+              <p>Early access is open.</p>
+              <p>For the next 48 hours, 25% off every candle, gift set and refill — before we tell anyone else. Use <b>EARLY25</b> at checkout. Free shipping on orders over $60.</p>
+              <p>Start with Cedar Harbor if you've never tried us. Start with the Winter Trio gift set if you're shopping for someone else.</p>
+              <span class="cta">Shop early access →</span>
+              <p>Ends Friday morning, when the doors open to everyone.</p>
+              <p>— Maya</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="email">
+          <div class="meta"><b>Email 3 · Black Friday launch</b><span>Send: Fri Nov 27, 7:00 AM</span></div>
+          <div class="body">
+            <p class="subj">Subject: 25% off everything. Today.</p>
+            <p class="alt">Alt: Black Friday at Harbor &amp; Pine: it's on · Alt: The one sale we run all year</p>
+            <p class="prev">Preview: Our biggest sale of the year is live. Free shipping over $60.</p>
+            <div class="copy">
+              <p>It's Black Friday, and everything we make is 25% off.</p>
+              <p>Hand-poured soy candles, 60-hour burn, scents built around the Maine coast in winter. Use code <b>HARBOR25</b>. Free shipping over $60.</p>
+              <p>Three things to know:</p>
+              <ul>
+                <li>Cedar Harbor and Winter Pine are limited this year. When they're gone, they're gone until next season.</li>
+                <li>Gift sets come wrapped, with a handwritten card if you want one.</li>
+                <li>Orders ship within two business days.</li>
+              </ul>
+              <span class="cta">Shop the sale →</span>
+              <p>Sale ends Monday at midnight.</p>
+              <p>— Maya</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="email">
+          <div class="meta"><b>Email 4 · Small Business Saturday</b><span>Send: Sat Nov 28, 10:00 AM</span></div>
+          <div class="body">
+            <p class="subj">Subject: Small shop, big thank you</p>
+            <p class="alt">Alt: The sale continues (and a note from the studio) · Alt: What your order actually does</p>
+            <p class="prev">Preview: It's Small Business Saturday. Here's where your order goes.</p>
+            <div class="copy">
+              <p>It's Small Business Saturday, so here's a quick, honest note.</p>
+              <p>Harbor &amp; Pine is two people and a pouring table in Portland. Every order this weekend pays for the next batch of wax, a winter's worth of wicks, and a slightly less stressful December for the two of us.</p>
+              <p>So — thank you. The 25% off runs through Monday with code <b>HARBOR25</b>.</p>
+              <p>If you're still deciding: the Winter Trio is our most-gifted set, and it's 25% off too.</p>
+              <span class="cta">Shop the sale →</span>
+              <p>— Maya &amp; Tom</p>
+            </div>
+          </div>
+        </article>
+
+        <article class="email">
+          <div class="meta"><b>Email 5 · Cyber Monday last call</b><span>Send: Mon Nov 30, 8:00 AM (resend to non-openers 6:00 PM)</span></div>
+          <div class="body">
+            <p class="subj">Subject: Last call: 25% off ends at midnight</p>
+            <p class="alt">Alt: A few hours left (plus a Cyber Monday bundle) · Alt: This is the last one, promise</p>
+            <p class="prev">Preview: The sale ends tonight. Bundle any three candles and save an extra $10.</p>
+            <div class="copy">
+              <p>This is the last email about the sale, promise.</p>
+              <p>25% off ends tonight at midnight. For Cyber Monday only, bundle any three candles and we'll take an extra $10 off at checkout — automatically, on top of <b>HARBOR25</b>.</p>
+              <p>Still shipping within two days, still free over $60, still in time for December.</p>
+              <span class="cta">Finish your order →</span>
+              <p>Thanks for a wild weekend. See you in December with a gift guide and a shipping-deadline reminder — the useful kind.</p>
+              <p>— Maya</p>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="how">
+    <div class="wrap">
+      <p class="kicker">How it works</p>
+      <h2>Four steps. About five minutes of your time.</h2>
+      <div class="steps">
+        <div class="step"><h3>Tell us your store</h3><p>Email hello@sleighmail.us with your store URL and the package you want. That's the whole form.</p></div>
+        <div class="step"><h3>Five-minute intake</h3><p>Your offer, discount codes, dates, anything off-limits, and a link to a past email you liked (optional).</p></div>
+        <div class="step"><h3>Drafts in 48 hours</h3><p>We read your site, your products and your past emails, then write the full sequence in your voice.</p></div>
+        <div class="step"><h3>Approve, then pay</h3><p>One round of revisions is included. If you don't approve the drafts, you don't pay. Simple.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <p class="kicker">FAQ</p>
+      <h2>Fair questions.</h2>
+      <details open>
+        <summary>Is this really written by an AI?</summary>
+        <p>Yes. Sleighmail is a 30-day experiment: Claude, an AI model, does the research and writing, and a human owner handles payments and keeps things honest. You see the drafts and approve them before you pay anything, so the risk sits with us, not you.</p>
+      </details>
+      <details>
+        <summary>Do you send the emails for me?</summary>
+        <p>No. You paste them into whatever you already use — Klaviyo, Mailchimp, Shopify Email, Omnisend, Flodesk. We deliver each email as formatted copy plus a plain-text version, with a recommended send date and time.</p>
+      </details>
+      <details>
+        <summary>Will it sound like me and not like a robot?</summary>
+        <p>We read your product pages, your About page and any past emails you share, and write in that voice. If the first draft misses, the included revision round fixes it. The sample above is the register we aim for: plain, specific, human.</p>
+      </details>
+      <details>
+        <summary>Why is it so much cheaper than a freelancer or agency?</summary>
+        <p>No overhead. A freelance copywriter charges $300–$1,500 for a sequence like this because their time is scarce. Ours isn't. You get the same deliverable in 48 hours at a flat price.</p>
+      </details>
+      <details>
+        <summary>What if I don't like it?</summary>
+        <p>You get one round of revisions. If you still don't want to use the emails, don't pay. We'd rather lose a sale than send you something you won't use.</p>
+      </details>
+      <details>
+        <summary>Do you have testimonials?</summary>
+        <p>Not yet — this is our first season. That's exactly why you pay on approval instead of up front.</p>
+      </details>
+      <details>
+        <summary>What do you need from me?</summary>
+        <p>Your store URL, which package you want, your offer (discount, codes, free-shipping threshold), your dates, and anything we shouldn't say. Five minutes, usually less.</p>
+      </details>
+    </div>
+  </section>
+
+  <section id="start" style="border-bottom:none">
+    <div class="wrap">
+      <div class="start">
+        <h2>Black Friday is in 18 days.</h2>
+        <p>Your teaser email should go out Monday Nov 23. Working back from that, we need your intake by Friday Nov 20 to deliver comfortably — earlier is better.</p>
+        <div class="how">
+          <b>To get started:</b> email <a href="mailto:hello@sleighmail.us?subject=Sleighmail%20%E2%80%94%20my%20store" style="color:#fff;font-weight:600">hello@sleighmail.us</a> with your store URL and the package you want — or just reply to the Sleighmail email that brought you here. We'll send the five-minute intake and get to work.
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><b style="color:var(--pine)">Sleighmail</b> writes holiday email campaigns for small online shops. Pay on approval. One round of revisions included. Prices in USD. Contact: hello@sleighmail.us</p>
+    <div class="honest">Full disclosure: Sleighmail is run by an AI (Claude) with a human owner. Everything we deliver is AI-written and human-approved by you before payment. We don't send email on your behalf, don't access your email platform, and don't store your customer data.</div>
+  </div>
+</footer>
+
+</body>
+</html>
